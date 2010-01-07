@@ -3,6 +3,13 @@
 rflak is simple gem to use flaker.pl API. flaker.pl is polish microblogging website. For more information
 please visit http://flaker.pl.
 
+== Instalation
+
+To install rflak gem just simply execute command written below:
+  gem install rflak
+
+== Docs & Examples  
+
 You can simply user two classes Flaker and Traker. Flaker class can fetch all entries scoped with
 conditions described in flaker's API. You can check API http://blog.flaker.pl/api described in polish.
 
