@@ -75,25 +75,33 @@ module Rflak
     end
 
 
-    # Return login list of users that follow user
+    # Return login list of users that follow user. Pass <tt>true</tt> as parameter if you want to get extended
+    # data (avatar, fiest name, url, sex, ...)
     #
+    # extended:: Boolean, default false
     # returns:: Array
-    def followers
+    def followers(extended = false)
+      request_path = "/type:list/source:followedby/login:#{ @login }"
+      request_path << "/extended:true" if extended
       resp = Flaker.auth_connection(self) do |connection|
-        connection.get("/type:list/source:followedby/login:#{ @login }")
+        connection.get(request_path)
       end
-      return resp['followedby']
+      resp['followedby']
     end
 
 
-    # Returns login list of users following by user
+    # Returns login list of users following by user. Pass <tt>true</tt> as parameter if you want to get extended
+    # data (avatar, fiest name, url, sex, ...)
     #
+    # extended:: Boolean, default false
     # returns:: Array
-    def following
+    def following(extended = false)
+      request_path = "/type:list/source:following/login:#{ @login }"
+      request_path << "/extended:true" if extended
       resp = Flaker.auth_connection(self) do |connection|
-        connection.get("/type:list/source:following/login:#{ @login }")
+        connection.get(request_path)
       end
-      return resp['following']
+      resp['following']
     end
   end
 end

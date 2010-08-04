@@ -102,6 +102,21 @@ class UserTest < Test::Unit::TestCase
   end
 
 
+  def test_get_followers_extended
+    followers_list_response = { 'followedby' => %w(seban) }
+    flexmock(Rflak::Flaker).should_receive(:get).with('/type:auth').once.and_return(auth_good_credentials)
+    flexmock(Rflak::Flaker).should_receive(:get).with("/type:list/source:followedby/login:login/extended:true").once.and_return(followers_list_response).times(1)
+
+    user = Rflak::User.new(:login => 'login', :api_key => 'good_key')
+    assert user.auth
+    followers = user.followers(true)
+
+    assert_kind_of(Array, followers)
+    assert_equal 1, followers.size
+    followers.each { |f| assert_kind_of(String, f) }
+  end
+
+
   def test_get_following_not_authorized
     flexmock(Rflak::Flaker).should_receive(:get).with('/type:auth').and_return(auth_bad_credentials)
     user = Rflak::User.new(:login => 'login', :api_key => 'bad_key')
@@ -119,6 +134,21 @@ class UserTest < Test::Unit::TestCase
     user = Rflak::User.new(:login => 'login', :api_key => 'good_key')
     assert user.auth
     following = user.following
+
+    assert_kind_of(Array, following)
+    assert_equal 1, following.size
+    following.each { |f| assert_kind_of(String, f) }
+  end
+
+
+  def test_get_following_extended
+    following_list_response = { 'following' => %w(seban) }
+    flexmock(Rflak::Flaker).should_receive(:get).with('/type:auth').once.and_return(auth_good_credentials)
+    flexmock(Rflak::Flaker).should_receive(:get).with("/type:list/source:following/login:login/extended:true").once.and_return(following_list_response).times(1)
+
+    user = Rflak::User.new(:login => 'login', :api_key => 'good_key')
+    assert user.auth
+    following = user.following(true)
 
     assert_kind_of(Array, following)
     assert_equal 1, following.size

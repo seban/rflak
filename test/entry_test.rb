@@ -86,7 +86,7 @@ class EntryTest < Test::Unit::TestCase
   end
 
 
-  def test_bookmark_authorized_user
+  def test_bookmark_not_authorized_user
     flexmock(Rflak::Flaker).should_receive(:get).with('/type:auth').and_return(auth_bad_credentials)
     user = Rflak::User.new(:login => 'login', :api_key => 'bad_key')
 
