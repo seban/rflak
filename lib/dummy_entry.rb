@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module Rflak
   class DummyEntry
     protected

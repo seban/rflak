@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module Rflak
   # Utility class for fetching 'flak's from the web.
   #

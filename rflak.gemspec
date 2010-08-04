@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.summary = 'Simple wraper for http://flaker.pl API'
   spec.files = ["lib/flaker.rb", "lib/comment.rb", "lib/not_authorized.rb", "lib/rflak.rb", 
     "lib/traker.rb", "lib/entry.rb", "lib/user.rb", "test/entry_test.rb", "test/comment_test.rb", 
-    "test/user_test.rb", "test/traker_test.rb", "test/flaker_test.rb"
+    "test/user_test.rb", "test/traker_test.rb", "test/flaker_test.rb", "lib/dummy_entry.rb"
   ]
   spec.require_path = 'lib'
   spec.extra_rdoc_files = ["README"]

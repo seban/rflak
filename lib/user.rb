@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module Rflak
   # Class represents single user of flaker.pl.
   class User

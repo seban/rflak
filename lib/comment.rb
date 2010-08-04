@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module Rflak
   # Class represents single comment assigned to 'flak'
   class Comment < DummyEntry
