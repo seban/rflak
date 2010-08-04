@@ -16,6 +16,11 @@ class EntryTest < Test::Unit::TestCase
       "time"=>"Thu, 18 Jun 2009 11:35:09 +0200",
       "text"=>"Jakiś fajny tekst wrzucony na flakerka. Przepraszam oryginalnego autora - prawnik10 za zmianę ;)",
       "source"=>"flaker",
+      "parent_id" => "1",
+      "is_private" => "0",
+      "tags" => ["#some_tag"],
+      "is_favorited" => "0",
+      "is_bookmark" => "0",
       "data"=>[],
       "comments" => [
         { "text" => "pi\u0119knie.... niez\u0142a kasa, bardzo niez\u0142a.",

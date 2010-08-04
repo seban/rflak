@@ -6,7 +6,8 @@ module Rflak
   # and can have many comments assigned to it.
   class Entry < DummyEntry
     ATTR_LIST = [:user, :permalink, :timestamp, :comments, :time, :text, :title, :has_video, :id,
-      :has_photo, :link, :has_link, :datetime, :source, :data, :subsource, :comments
+      :has_photo, :link, :has_link, :datetime, :source, :data, :subsource, :comments, :parent_id,
+      :is_private, :tags, :is_favorited, :is_bookmark
     ]
 
     # define attribute methods public getters and private setters
