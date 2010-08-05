@@ -3,6 +3,8 @@
 rflak is simple gem to use flaker.pl API. flaker.pl is polish microblogging website. For more information
 please visit http://flaker.pl.
 
+From version 0.4 rflak is compatible with Ruby 1.9
+
 == Instalation
 
 To install rflak gem just simply execute command written below:
